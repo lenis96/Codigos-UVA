@@ -4,10 +4,11 @@ def solve(cad,n):
 	if(n==len(cad)):
 		print("".join(cad))
 	else:
-		for i in range(n+1):
+		for i in range(n):
 			cad.insert(i,cad.pop(n))
 			solve(cad,n+1)
 			cad.insert(n,cad.pop(i))
+		solve(cad,n+1)
 	
 def main():
 	line=stdin.readline().strip()
